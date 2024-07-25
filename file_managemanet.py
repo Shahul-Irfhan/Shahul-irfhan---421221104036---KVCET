@@ -1,33 +1,39 @@
-import os   #library for text operations
-print("enter 1 to write, 2 to read, 3 to append")
-action=int(input(""))
-if action==1:
-    fnw=input("enter file name:")
-    cont=input("enter file content")
-    file=open(fnw,'w')
-    file.write(cont)
-    file.close()
-elif action==2:
-    a=os.listdir()
-    for i in a:
-        if i.endswith(".txt"):
-            print (i)
-    fnr=input("choose and enter the file")
-    file=open(fnr,'r')
-    file.seek(0)
-    print(file.read())
-    file.close()
-elif action==3:
-    a=os.listdir()
-    for i in a:
-        if i.endswith(".txt"):
-            print (i)
-    fna=input("choose and enter the file to append:")
-    fna_cont=input("enter content to append:")
-    file=open(fna,'a+')
-    file.write(fna_cont)
-    file.seek(0)
-    print(file.read())
-    file.close()
-else:
-    print("enter valid operation number")
+import os
+sample = input('enter 1 to write, 2 to read, 3 to append')
+if sample == '1':
+    allfile = os.listdir()
+    while true:
+        print([x for in allfile if x.endswitch ('.txt')])
+        fname = input ('enter file name')
+        if fname in allfile:
+            print('file already exist')
+        else:
+            data=input('enter data to write')
+            file=open(fname,'w')
+            file.write(data)
+            file.close()
+            break
+elif sample=='2':
+    allfile=os.listdir()
+    while true:
+        print([x for x in allfile if x.endswitch ('.txt')])
+        fname=input('enter file name')
+        if fname in allfile:
+            file=open(fname,'r')
+            print(file.read())
+            break
+        else:
+            print('no such file exist')
+elif sample=='3':
+    allfile=os.listdir()
+    while true:
+        print([x for x in allfile if x.endswitch('.txt')])
+        fname=inp('enter file name')
+        if fname in allfile:
+            data=input('enter data to write')
+            file=open(fname,'a')
+            file.write(data)
+            file.close()
+            break
+        else:
+            print('no such file exist')
